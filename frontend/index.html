@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="navigation-header" data-reactroot="">
+        <header class="navbar">
+            <h1>Shop</h1>
+            <a>logo</a>
+            <button class="caddie">
+                <img src="img/caddie.png" alt="">
+            </button>
+        </header>
+    </div>
+      <div class="category-container">
+        Produit:
+        <select name="categorie" id="cat-select" onchange="filterItems()">
+            <option value="all">Tous</option>
+            <option value="carte">Carte</option>
+            <option value="ecran">Écran</option>
+            <option value="Processeur">Processeur</option>
+        </select>
+        Marque:
+        <select name="marque" id="marque-select" onchange="filterItems()">
+            <option value="all">Tous</option>
+            <option value="NVIDIA">NVIDIA</option>
+            <option value="Asus">Asus</option>
+            <option value="AOC">AOC</option>
+            <option value="BenQ">BenQ</option>
+            <option value="AMD">AMD</option>
+            <option value="INTEL">INTEL</option>
+        </select>
+        Orienté:
+        <select name="cartes" id="carte-select" onchange="filterItems()">
+            <option value="all">Tous</option>
+            <option value="quality">Qualité Prix</option>
+            <option value="performance">Performance</option>
+        </select>
+        Stock:
+        <select name="stock" id="stock-select" onchange="filterItems()">
+            <option value="all">Tous</option>
+            <option value="oui">En Stock</option>
+            <option value="non">Hors Stock</option>
+        </select>
+    </div>
+    <div class="article-container">
+
+	</div>
+    <script src="js/compo.js"></script>
+</body>
+</html>
