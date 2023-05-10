@@ -4,9 +4,75 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
     <title>Document</title>
 </head>
 <body>
+    <div id="navigation-header" data-reactroot="">
+        <header class="be-nav">
+            <div class="o-header">
+                <a class="o-header__logo">
+                    <img class="o-header__logo__img" src="">
+                </a>
+                <form class="search-form" action="#" method="get">
+                    <label class="search-form__label visually-hidden" for="search-input">Recherche</label>
+                    <input class="search-form__input" id="search-input" type="search" placeholder="Recherche...">
+                    <button class="search-form__button" type="submit" aria-label="Rechercher">
+                    </button>
+                </form>
+                    <a class="o-header__userMenuContainer__cart" href="/fr/shop/cart" data-testid="header_link_cart" title="Panier">
+                        <svg class="icon-shopping-cart" viewBox="0 0 1000 1000" style="width: 25px; height: 25px;">
+                            <path xmlns="http://www.w3.org/2000/svg" d="M722.2 888.9c0 61.4 49.7 111.1 111.1 111.1 61.4 0 111.1-49.7 111.1-111.1 0-61.4-49.7-111.1-111.1-111.1-61.3 0-111.1 49.7-111.1 111.1 0-.1 0 0 0 0zm-555.5 0c0 61.4 49.7 111.1 111.1 111.1 61.4 0 111.1-49.7 111.1-111.1 0-61.4-49.7-111.1-111.1-111.1-61.4 0-111.1 49.7-111.1 111.1zm197-268.2L978.6 445c11.7-3.4 21.4-16.1 21.4-28.3V111.1H222.2V22.2C222.2 10 212.3.1 200 0H22.2C9.9.1 0 10 0 22.2v88.9h111.1l106.1 497.6 5 52.4v91.6c.1 12.2 10 22.2 22.2 22.2h733.3c12.2-.1 22.1-10 22.2-22.2v-86H375.1c-63.9 0-65.2-30.6-11.4-46z"></path>
+                        </svg>
+                    </a>                        
+            </div>
+        </header>
+    </div>
+      <div class="category-container">
+        Produit:
+        <select name="pets" id="pet-select">
+            <option value="">Tous</option>
+            <option value="dog">Carte</option>
+            <option value="cat">Écran</option>
+            <option value="cat">Processeur</option>
+        </select>
+        Marque:
+        <select name="pets" id="pet-select">
+            <option value="">Tous</option>
+            <option value="dog">NVIDIA</option>
+            <option value="cat">Asus</option>
+            <option value="cat">AOC</option>
+            <option value="cat">BenQ</option>
+            <option value="cat">AMD</option>
+            <option value="cat">INTEL</option>
+        </select>
+        Carte:
+        <select name="pets" id="pet-select">
+            <option value="">Tous</option>
+            <option value="dog">3070</option>
+            <option value="cat">3080</option>
+            <option value="cat">3090</option>
+        </select>
+        Écran:
+        <select name="pets" id="pet-select">
+            <option value="">Tous</option>
+            <option value="dog">144hz</option>
+            <option value="cat">240hz</option>
+        </select>
+        Processeurs:
+        <select name="pets" id="pet-select">
+            <option value="">Tous</option>
+            <option value="dog">Ryzen 5</option>
+            <option value="cat">Ryzen 7</option>
+            <option value="cat">Ryzen 9</option>
+            <option value="cat">Core I5</option>
+            <option value="cat">Core I7</option>
+            <option value="cat">Core I9</option>
+        </select>
+    </div>
     
+    <div class="article-container">
+        
+	</div>
 </body>
 </html>
