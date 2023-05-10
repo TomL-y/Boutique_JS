@@ -4,7 +4,12 @@ const data = require('./data.json');
 
 const port = 3000;
 
-app.get('/', (req, res) => { res.send('Hello World!') });
+app.get('/', (req, res) => { res.sendFile(__dirname + '/index.html'); });
+
+app.get('/stussy', (req, res) => {
+    const stussy = data.clothes;
+    res.json(stussy);
+  });
 
 app.listen(port, () => console.log(`Server listening on port ${port}`));
 

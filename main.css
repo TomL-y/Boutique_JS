@@ -156,6 +156,8 @@
 .category-container {
     display: flex;
     font-size: 30px;
+    margin-top: 20px;
+    margin-left: 5%;
 }
 
 
