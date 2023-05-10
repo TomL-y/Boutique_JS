@@ -9,7 +9,7 @@
             "sous-categorie":"quality",
             "stock":"oui",
             "marque":"NVIDIA",
-            "reduction":"10",
+            "reduction":"1650",
             "img1": "../img/3080-1.jpg",
             "img2": "../img/3080-2.jpg",
             "img3": "../img/3080-3.jpg"
@@ -25,7 +25,7 @@
             "sous-categorie":"quality",
             "stock":"oui",
             "marque":"NVIDIA",
-            "reduction":"10",
+            "reduction":"1300",
             "img1": "../img/3070-1.jpg",
             "img2": "../img/3070-2.jpg",
             "img3": "../img/3070-3.jpg"
@@ -40,7 +40,7 @@
             "sous-categorie":"performance",
             "stock":"non",
             "marque":"NVIDIA",
-            "reduction":"10",
+            "reduction":"",
             "img1": "../img/3090-1.jpg",
             "img2": "../img/3090-2.jpg",
             "img3": "../img/3090-3.jpg"
@@ -49,13 +49,13 @@
             "id":"4",
             "titre":"RTX 3080 Ti",
             "description":"Carte graphique NVIDIA RTX 3080 Ti",
-            "prix":"1800",
+            "prix":"1700",
             "devise":"€",
             "categorie":"carte",
             "sous-categorie":"quality",
             "stock":"oui",
             "marque":"NVIDIA",
-            "reduction":"10",
+            "reduction":"",
             "img1": "../img/3080ti-1.jpg",
             "img2": "../img/3080ti-2.jpg",
             "img3": "../img/3080ti-3.jpg"
@@ -65,13 +65,13 @@
             "id":"5",
             "titre":"RTX 3070 Ti",
             "description":"Carte graphique NVIDIA RTX 3070 Ti",
-            "prix":"1500",
+            "prix":"1350",
             "devise":"€",
             "categorie":"carte",
             "sous-categorie":"quality",
             "stock":"oui",
             "marque":"NVIDIA",
-            "reduction":"10",
+            "reduction":"",
             "img1": "../img/3070ti-1.jpg",
             "img2": "../img/3070ti-2.jpg",
             "img3": "../img/3070ti-3.jpg"
@@ -80,13 +80,13 @@
             "id":"6",
             "titre":"RTX 3090 Ti",
             "description":"Carte graphique NVIDIA RTX 3090 Ti",
-            "prix":"2000",
+            "prix":"1850",
             "devise":"€",
             "categorie":"carte",
             "sous-categorie":"performance",
             "stock":"oui",
             "marque":"NVIDIA",
-            "reduction":"10",
+            "reduction":"",
             "img1": "../img/3090ti-1.jpg",
             "img2": "../img/3090ti-2.jpg",
             "img3": "../img/3090ti-3.jpg"
@@ -101,7 +101,7 @@
             "sous-categorie":"quality",
             "stock":"non",
             "marque":"Asus",
-            "reduction":"10",
+            "reduction":"320",
             "img1": "../img/asus-1.jpg",
             "img2": "../img/asus-2.jpg",
             "img3": "../img/asus-3.jpg"
@@ -116,7 +116,7 @@
             "sous-categorie":"performance",
             "stock":"oui",
             "marque":"Asus",
-            "reduction":"10",
+            "reduction":"400",
             "img1": "../img/asus2-1.jpg",
             "img2": "../img/asus2-2.jpg",
             "img3": "../img/asus2-3.jpg"
@@ -131,7 +131,7 @@
             "sous-categorie":"performance",
             "stock":"oui",
             "marque":"AOC",
-            "reduction":"10",
+            "reduction":"375",
             "img1": "../img/aoc-1.jpg",
             "img2": "../img/aoc-2.jpg",
             "img3": "../img/aoc-3.jpg"
@@ -146,7 +146,7 @@
             "sous-categorie":"performance",
             "stock":"non",
             "marque":"AOC",
-            "reduction":"10",
+            "reduction":"",
             "img1": "../img/aoc2-1.jpg",
             "img2": "../img/aoc2-2.jpg",
             "img3": "../img/aoc2-3.jpg"
@@ -161,7 +161,7 @@
             "sous-categorie":"quality",
             "stock":"oui",
             "marque":"BenQ",
-            "reduction":"10",
+            "reduction":"190",
             "img1": "../img/benq-1.jpg",
             "img2": "../img/benq-2.jpg",
             "img3": "../img/benq-3.jpg"
@@ -176,7 +176,7 @@
             "sous-categorie":"quality",
             "stock":"oui",
             "marque":"BenQ",
-            "reduction":"10",
+            "reduction":"430",
             "img1": "../img/benq2-1.jpg",
             "img2": "../img/benq2-2.jpg",
             "img3": "../img/benq2-3.jpg"
@@ -191,7 +191,7 @@
             "sous-categorie":"quality",
             "stock":"oui",
             "marque":"AMD",
-            "reduction":"10",
+            "reduction":"243",
             "img1": "../img/amd-1.jpg",
             "img2": "../img/amd-2.jpg",
             "img3": "../img/amd-3.jpg"
@@ -206,7 +206,7 @@
             "sous-categorie":"quality",
             "stock":"oui",
             "marque":"AMD",
-            "reduction":"10",
+            "reduction":"350",
             "img1": "../img/amd2-1.jpg",
             "img2": "../img/amd2-2.jpg",
             "img3": "../img/amd2-3.jpg"
@@ -221,7 +221,7 @@
             "sous-categorie":"performance",
             "stock":"oui",
             "marque":"AMD",
-            "reduction":"10",
+            "reduction":"",
             "img1": "../img/amd3-1.jpg",
             "img2": "../img/amd3-2.jpg",
             "img3": "../img/amd3-3.jpg"
@@ -236,7 +236,7 @@
             "sous-categorie":"quality",
             "stock":"oui",
             "marque":"INTEL",
-            "reduction":"10",
+            "reduction":"300",
             "img1": "../img/intel-1.jpg",
             "img2": "../img/intel-2.jpg",
             "img3": "../img/intel-3.jpg" 
@@ -251,7 +251,7 @@
             "sous-categorie":"quality",
             "stock":"non",
             "marque":"INTEL",
-            "reduction":"10",
+            "reduction":"395",
             "img1": "../img/intel2-1.jpg",
             "img2": "../img/intel2-2.jpg",
             "img3": "../img/intel2-3.jpg"
@@ -266,7 +266,7 @@
             "sous-categorie":"performance",
             "stock":"non",
             "marque":"INTEL",
-            "reduction":"10",
+            "reduction":"450",
             "img1": "../img/intel3-1.jpg",
             "img2": "../img/intel3-2.jpg",
             "img3": "../img/intel3-3.jpg" 

@@ -1,4 +1,5 @@
 // main.js
+// main.js
 function displayitem() {
   var container = document.querySelector('.article-container');
   container.innerHTML = '';
@@ -9,22 +10,38 @@ function displayitem() {
         var article = document.createElement('div');
         article.classList.add('article');
         article.innerHTML = `
-        <button>
-        <h3>${item.titre}</h3>
-        <p>${item.marque}</p>
-        <img src="${item.img1}">
-        <div class="content">
-          <p>${item.prix} ${item.devise}</p>
-        </div>
-      </button>
+          <div>
+            <h3>${item.titre}</h3>
+            <p>${item.marque}</p>
+            <img class="product-img" src="${item.img1}" data-img1="${item.img1}" data-img2="${item.img2}">
+            <div class="content">
+              ${item.reduction ? `<del>${item.prix} ${item.devise}</del><span class="reduced-price">${item.reduction} ${item.devise}</span>` : `<span>${item.prix} ${item.devise}</span>`}
+              <button class="add-to-cart-btn" data-title="${item.titre}" data-price="${item.reduction || item.prix}" data-img="${item.img1}">Ajouter au panier</button>
+            </div>
+          </div>
         `;
         container.appendChild(article);
+      });
+    
+      const productImages = container.querySelectorAll('.product-img');
+      productImages.forEach(imgElement => {
+        imgElement.addEventListener('mouseover', function() {
+          this.src = this.dataset.img2;
+        });
+        imgElement.addEventListener('mouseout', function() {
+          this.src = this.dataset.img1;
+        });
+      });
+      const addToCartBtns = document.querySelectorAll('.add-to-cart-btn');
+      addToCartBtns.forEach(btn => {
+        btn.addEventListener('click', addToCart);
       });
     })
     .catch(error => {
       console.error("Erreur lors de la récupération des données :", error);
     });
 }
+
 
 window.onload = function() {
   displayitem();
@@ -55,24 +72,151 @@ function filterItems() {
         (item['sous-categorie'] === selectedCarte || selectedCarte === 'all') &&
         (item.stock === selectedStock || selectedStock === 'all')
       );
-
+    
       filteredItems.forEach(item => {
         var article = document.createElement('div');
         article.classList.add('article');
         article.innerHTML = `
-        <button>
-          <h3>${item.titre}</h3>
-          <p>${item.marque}</p>
-          <img src="${item.img1}">
-          <div class="content">
-            <p>${item.prix} ${item.devise}</p>
+          <div>
+            <h3>${item.titre}</h3>
+            <p>${item.marque}</p>
+            <img class="product-img" src="${item.img1}" data-img1="${item.img1}" data-img2="${item.img2}">
+            <div class="content">
+              ${item.reduction ? `<del>${item.prix} ${item.devise}</del><span class="reduced-price">${item.reduction} ${item.devise}</span>` : `<span>${item.prix} ${item.devise}</span>`}
+              <button class="add-to-cart-btn" data-title="${item.titre}" data-price="${item.reduction || item.prix}" data-img="${item.img1}">Ajouter au panier</button>
+            </div>
           </div>
-        </button>
         `;
         container.appendChild(article);
+      });
+    
+      const productImages = container.querySelectorAll('.product-img');
+      productImages.forEach(imgElement => {
+        imgElement.addEventListener('mouseover', function() {
+          this.src = this.dataset.img2;
+        });
+        imgElement.addEventListener('mouseout', function() {
+          this.src = this.dataset.img1;
+        });
+      });
+      const addToCartBtns = document.querySelectorAll('.add-to-cart-btn');
+      addToCartBtns.forEach(btn => {
+        btn.addEventListener('click', addToCart);
       });
     })
     .catch(error => {
       console.error("Erreur lors de la récupération des données :", error);
     });
+}
+
+
+
+function displayCart() {
+  const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  const popup = document.createElement('div');
+  popup.classList.add('popup');
+
+  const popupContent = document.createElement('div');
+  popupContent.classList.add('popup-content');
+
+  popupContent.innerHTML = `
+    <h2>Votre panier</h2>
+    <div class="custom-content">
+    </div>
+  `;
+
+  const closeBtnContainer = document.createElement('div');
+  closeBtnContainer.classList.add('close-btn-container');
+
+  const closeBtn = document.createElement('button');
+  closeBtn.classList.add('close-btn');
+  closeBtn.textContent = 'Fermer';
+
+  closeBtn.addEventListener('click', function() {
+    popup.remove();
+  });
+
+  closeBtnContainer.appendChild(closeBtn);
+
+  popup.appendChild(popupContent);
+  popup.appendChild(closeBtnContainer);
+  document.body.appendChild(popup);
+
+  updateCart();
+  cartItems.forEach((item, index) => { // Ajoutez "index" ici
+  const itemElement = document.createElement('div');
+  itemElement.classList.add('cart-item');
+  itemElement.innerHTML = `
+      <img src="${item.img}" class="cart-item-img">
+      <p>${item.title}</p>
+      <p>${item.price} €</p>
+      <p>Quantité : ${item.quantity}</p>
+      <button class="remove-item-btn" data-index="${index}">Supprimer</button>
+    `;
+  customContent.appendChild(itemElement);
+});
+
+  const removeItemBtns = popup.querySelectorAll('.remove-item-btn');
+  removeItemBtns.forEach(btn => {
+    btn.addEventListener('click', removeItemFromCart);
+  });
+}
+
+const caddieBtn = document.querySelector('.caddie');
+caddieBtn.addEventListener('click', () => {
+  displayCart();
+});
+
+
+function addToCart(event) {
+  const title = event.target.dataset.title;
+  const price = parseFloat(event.target.dataset.price);
+  const img = event.target.dataset.img; // Ajout de la source de l'image
+
+  const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  const itemIndex = cartItems.findIndex(item => item.title === title);
+
+  if (itemIndex > -1) {
+    cartItems[itemIndex].quantity += 1;
+  } else {
+    cartItems.push({ title, price, img, quantity: 1 }); // Inclure l'image ici
+  }
+
+  localStorage.setItem('cartItems', JSON.stringify(cartItems));
+}
+
+
+
+function removeItemFromCart(event) {
+  const index = parseInt(event.target.dataset.index);
+  const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+  cartItems.splice(index, 1);
+  localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+  updateCart();
+}
+
+function updateCart() {
+  const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  const customContent = document.querySelector('.popup-content .custom-content');
+  customContent.innerHTML = '';
+
+  cartItems.forEach((item, index) => {
+    const itemElement = document.createElement('div');
+    itemElement.classList.add('cart-item');
+    itemElement.innerHTML = `
+      <img src="${item.img}" class="cart-item-img">
+      <p>${item.title}</p>
+      <p>${item.price} €</p>
+      <p>Quantité : ${item.quantity}</p>
+      <button class="remove-item-btn" data-index="${index}">Supprimer</button>
+    `;
+    customContent.appendChild(itemElement);
+  });
+
+  const removeItemBtns = document.querySelectorAll('.remove-item-btn');
+  removeItemBtns.forEach(btn => {
+    btn.addEventListener('click', removeItemFromCart);
+  });
 }
