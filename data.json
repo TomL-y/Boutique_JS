@@ -2,7 +2,7 @@
     "item": [{
             "id":"1",
             "titre":"RTX 3080",
-            "description":"Carte graphique NVIDIA RTX 3080",
+            "description":"ASUS TUF Gaming NVIDIA GeForce RTX 3080 V2 – Carte Graphique Gaming (PCIe 4.0, 10GB GDDR6X, LHR, HDMI 2.1, DisplayPort 1.4a, Double roulement à Billes, robustesse Militaire, GPU Tweak II)",
             "prix":"1800",
             "devise":"€",
             "categorie":"carte",
@@ -18,7 +18,7 @@
         {
             "id":"2",
             "titre":"RTX 3070",
-            "description":"Carte graphique NVIDIA RTX 3070",
+            "description":"ASUS TUF GAMING NVIDIA GeForce RTX 3070 V2 OC Edition – Carte Graphique Gaming (PCIe 4.0, 8GB GDDR6, HDMI 2.1, DisplayPort 1.4a, ventilateurs à double roulement à billes, GPU Tweak II)",
             "prix":"1500",
             "devise":"€",
             "categorie":"carte",
@@ -33,7 +33,7 @@
         {
             "id":"3",
             "titre":"RTX 3090",
-            "description":"Carte graphique NVIDIA RTX 3090",
+            "description":"ASUS TUF Gaming NVIDIA GeForce RTX 3090 OC Edition Carte Graphique (PCIe 4.0, 24GB GDDR6X, HDMI 2.1, DisplayPort 1.4a, ventilateurs à double roulement à billes, robustesse militaire, GPU Tweak II)",
             "prix":"2000",
             "devise":"€",
             "categorie":"carte",
@@ -48,7 +48,7 @@
         {
             "id":"4",
             "titre":"RTX 3080 Ti",
-            "description":"Carte graphique NVIDIA RTX 3080 Ti",
+            "description":"ASUS ROG Strix NVIDIA GeForce RTX 3080 Ti OC Edition Carte graphique gaming (PCIe 4.0, 12GB GDDR6X, HDMI 2.1, DisplayPort 1.4a, Ventilateurs axiaux, 2.9-slot, Super Alloy Power II, GPU Tweak II)",
             "prix":"1700",
             "devise":"€",
             "categorie":"carte",
@@ -64,7 +64,7 @@
         {
             "id":"5",
             "titre":"RTX 3070 Ti",
-            "description":"Carte graphique NVIDIA RTX 3070 Ti",
+            "description":"MSI GeForce RTX 3070 Ti Ventus 3X 8G NVIDIA 8 Go GDDR6X Carte Graphique Noir",
             "prix":"1350",
             "devise":"€",
             "categorie":"carte",
@@ -79,7 +79,7 @@
         {
             "id":"6",
             "titre":"RTX 3090 Ti",
-            "description":"Carte graphique NVIDIA RTX 3090 Ti",
+            "description":"24 Go GDDR6X - HDMI/Tri DisplayPort - PCI Express (NVIDIA GeForce RTX 3090 Ti)",
             "prix":"1850",
             "devise":"€",
             "categorie":"carte",

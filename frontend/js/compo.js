@@ -47,6 +47,8 @@ window.onload = function() {
   displayitem();
 };
 
+/******************************************************************************************/
+
 function filterItems() {
   const catSelect = document.getElementById('cat-select');
   const selectedCategory = catSelect.value;
@@ -109,6 +111,7 @@ function filterItems() {
     });
 }
 
+/******************************************************************************************/
 
 
 function displayCart() {
@@ -122,6 +125,8 @@ function displayCart() {
   popupContent.innerHTML = `
     <h2>Votre panier</h2>
     <div class="custom-content">
+    </div>
+    <div class="footer">
     </div>
   `;
 
@@ -143,35 +148,22 @@ function displayCart() {
   document.body.appendChild(popup);
 
   updateCart();
-  cartItems.forEach((item, index) => { // Ajoutez "index" ici
-  const itemElement = document.createElement('div');
-  itemElement.classList.add('cart-item');
-  itemElement.innerHTML = `
-      <img src="${item.img}" class="cart-item-img">
-      <p>${item.title}</p>
-      <p>${item.price} €</p>
-      <p>Quantité : ${item.quantity}</p>
-      <button class="remove-item-btn" data-index="${index}">Supprimer</button>
-    `;
-  customContent.appendChild(itemElement);
-});
-
-  const removeItemBtns = popup.querySelectorAll('.remove-item-btn');
-  removeItemBtns.forEach(btn => {
-    btn.addEventListener('click', removeItemFromCart);
-  });
 }
+
+
 
 const caddieBtn = document.querySelector('.caddie');
 caddieBtn.addEventListener('click', () => {
   displayCart();
 });
 
+/******************************************************************************************/
+
 
 function addToCart(event) {
   const title = event.target.dataset.title;
   const price = parseFloat(event.target.dataset.price);
-  const img = event.target.dataset.img; // Ajout de la source de l'image
+  const img = event.target.dataset.img;
 
   const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
   const itemIndex = cartItems.findIndex(item => item.title === title);
@@ -179,13 +171,16 @@ function addToCart(event) {
   if (itemIndex > -1) {
     cartItems[itemIndex].quantity += 1;
   } else {
-    cartItems.push({ title, price, img, quantity: 1 }); // Inclure l'image ici
+    const newItem = { title, price, img, quantity: 1 };
+    cartItems.push(newItem);
   }
 
   localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  updateCart();
 }
 
 
+/******************************************************************************************/
 
 function removeItemFromCart(event) {
   const index = parseInt(event.target.dataset.index);
@@ -196,6 +191,8 @@ function removeItemFromCart(event) {
 
   updateCart();
 }
+
+/******************************************************************************************/
 
 function updateCart() {
   const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -215,8 +212,35 @@ function updateCart() {
     customContent.appendChild(itemElement);
   });
 
+  const footer = document.querySelector('.popup-content .footer');
+
+  let cartFooter = footer.querySelector('.cart-footer');
+
+  if (!cartFooter) {
+    cartFooter = document.createElement('div');
+    cartFooter.classList.add('cart-footer');
+    footer.appendChild(cartFooter);
+  }
+
+  const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+  cartFooter.innerHTML = `
+    <p>Prix total: ${totalPrice.toFixed(2)} €</p>
+    <button class="clear-cart-btn">Vider le panier</button>
+    <button class="checkout-btn">Commander</button>
+  `;
+
+  const clearCartBtn = cartFooter.querySelector('.clear-cart-btn');
+  clearCartBtn.addEventListener('click', () => {
+    localStorage.removeItem('cartItems');
+    updateCart();
+  });
+
   const removeItemBtns = document.querySelectorAll('.remove-item-btn');
   removeItemBtns.forEach(btn => {
     btn.addEventListener('click', removeItemFromCart);
   });
 }
+
+
+
+/******************************************************************************************/
