@@ -1,5 +1,4 @@
-// main.js
-// main.js
+
 function displayitem() {
   var container = document.querySelector('.article-container');
   container.innerHTML = '';
@@ -17,7 +16,6 @@ function displayitem() {
             <div class="content">
               ${item.reduction ? `<del>${item.prix} ${item.devise}</del><span class="reduced-price">${item.reduction} ${item.devise}</span>` : `<span>${item.prix} ${item.devise}</span>`}
               <button class="add-to-cart-btn" data-title="${item.titre}" data-price="${item.reduction || item.prix}" data-img="${item.img1}">Ajouter au panier</button>
-              <button class="details-btn" onclick="window.location.href='detail.html?itemId=${item.id}'">Voir les détails</button>
               </div>
           </div>
         `;
@@ -91,7 +89,6 @@ function filterItems() {
             <div class="content">
               ${item.reduction ? `<del>${item.prix} ${item.devise}</del><span class="reduced-price">${item.reduction} ${item.devise}</span>` : `<span>${item.prix} ${item.devise}</span>`}
               <button class="add-to-cart-btn" data-title="${item.titre}" data-price="${item.reduction || item.prix}" data-img="${item.img1}">Ajouter au panier</button>
-              <button class="details-btn" onclick="window.location.href='detail.html?itemId=${item.id}'">Voir les détails</button>
             </div>
           </div>
         `;
