@@ -17,7 +17,8 @@ function displayitem() {
             <div class="content">
               ${item.reduction ? `<del>${item.prix} ${item.devise}</del><span class="reduced-price">${item.reduction} ${item.devise}</span>` : `<span>${item.prix} ${item.devise}</span>`}
               <button class="add-to-cart-btn" data-title="${item.titre}" data-price="${item.reduction || item.prix}" data-img="${item.img1}">Ajouter au panier</button>
-            </div>
+              <button class="details-btn" onclick="window.location.href='detail.html?itemId=${item.id}'">Voir les détails</button>
+              </div>
           </div>
         `;
         container.appendChild(article);
@@ -39,6 +40,10 @@ function displayitem() {
     })
     .catch(error => {
       console.error("Erreur lors de la récupération des données :", error);
+    });
+    const detailsBtns = document.querySelectorAll('.details-btn');
+      detailsBtns.forEach(btn => {
+        btn.addEventListener('click', redirectToDetails);
     });
 }
 
@@ -86,6 +91,7 @@ function filterItems() {
             <div class="content">
               ${item.reduction ? `<del>${item.prix} ${item.devise}</del><span class="reduced-price">${item.reduction} ${item.devise}</span>` : `<span>${item.prix} ${item.devise}</span>`}
               <button class="add-to-cart-btn" data-title="${item.titre}" data-price="${item.reduction || item.prix}" data-img="${item.img1}">Ajouter au panier</button>
+              <button class="details-btn" onclick="window.location.href='detail.html?itemId=${item.id}'">Voir les détails</button>
             </div>
           </div>
         `;
@@ -108,6 +114,10 @@ function filterItems() {
     })
     .catch(error => {
       console.error("Erreur lors de la récupération des données :", error);
+    });
+    const detailsBtns = document.querySelectorAll('.details-btn');
+      detailsBtns.forEach(btn => {
+        btn.addEventListener('click', redirectToDetails);
     });
 }
 
@@ -241,6 +251,10 @@ function updateCart() {
   });
 }
 
-
-
 /******************************************************************************************/
+
+function redirectToDetails(event) {
+  const itemId = event.target.dataset.id;
+  window.location.href = `/detail?id=${itemId}`;
+}
+

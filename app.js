@@ -9,6 +9,10 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/frontend/index.html');
 });
 
+app.get('/detail', (req, res) => {
+  res.sendFile(__dirname + '/frontend/detail.html');
+}); 
+
 app.use(express.static(__dirname + '/frontend', {
   setHeaders: function (res, path) {
     if (path.endsWith('.js')) {
@@ -23,11 +27,12 @@ app.get('/item', (req, res) => {
   res.json(item);
 });
 
-app.get('/compo/:id', (req, res) => {
+app.get('/item/:id', (req, res) => {
   const id = parseInt(req.params.id);
-  const compos = data.compos;
-  const compo = compos.find(c => c.id === id);
-  res.send(compo.titre);
+  const items = data.item;
+  const item = items.find(c => c.id === id);
+  res.json(item);
 });
+
 
 app.listen(port, () => console.log(`Server listening on port ${port}`));
